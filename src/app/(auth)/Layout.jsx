@@ -1,9 +1,12 @@
-import React from 'react';
+import Navbar from '@/components/shared/Navbar';
+import React, { Children } from 'react';
+import { montserrat } from '../layout';
 
-const AuthLayout = () => {
+const AuthLayout = ({children}) => {
     return (
-        <div>
-            
+        <div className={`${montserrat.className}`}>
+            <Navbar/>
+            {children}
         </div>
     );
 };

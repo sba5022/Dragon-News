@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const LeftSideBar = ({categories,activeId}) => {
@@ -7,7 +8,10 @@ const LeftSideBar = ({categories,activeId}) => {
     <ul className="flex flex-col gap-3 mt-6">{categories.data.news_category.map(category => {
       return <li key={category.category_id} className={`
         ${activeId === category.category_id && "bg-slate-100"}
-        bg-slate-100 p-2 text-lg text-center  font-bold  rounded-md`}>{category.category_name}</li>
+         p-2 text-lg text-center  font-bold  rounded-md`}>
+            
+            <Link href={`/category/${category.category_id}`} className='block bg-amber-200'>{category.category_name}</Link>
+         </li>
     })}</ul>
   </div>
         </div>
